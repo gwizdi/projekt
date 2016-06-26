@@ -1,1 +1,115 @@
 
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Gra_w_zapamiętywanie
+{
+    public partial class GameForm : Form
+    {
+        #region Zmienne
+        PictureBox pierwszaKarta;
+        PictureBox drugaKarta;
+        PictureBox wybranaKarta;
+
+        Random losowaPozycja = new Random();
+        List<Point> listaPozycjiKart = new List<Point>();
+        #endregion
+        #region GameForm
+        public GameForm()
+        {
+            InitializeComponent();
+        }
+
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+            przygotujPlansze();
+            timerPółSekundy.Start();
+        }
+        #endregion
+        #region Funkcje
+        void sprawdzamy()
+        {
+            if (pierwszaKarta == null)
+            {
+                pierwszaKarta = wybranaKarta;
+                wybranaKarta = null;
+            }
+            else if (pierwszaKarta != null && drugaKarta == null)
+            {
+                drugaKarta = wybranaKarta;
+                wybranaKarta = null;
+            }
+            if (pierwszaKarta != null && drugaKarta != null)
+            {
+                if (pierwszaKarta.Tag == drugaKarta.Tag)
+                {
+                    int liczba = Convert.ToInt32(lblWynikLiczba.Text);
+                    liczba += 10;
+                    lblWynikLiczba.Text = Convert.ToString(liczba);
+                    pierwszaKarta.Enabled = false;
+                    drugaKarta.Enabled = false;
+                    pierwszaKarta = null;
+                    drugaKarta = null;
+
+                }
+                else
+                {
+                    timerPoWciśnięciuDrugiejKarty.Start();
+                }
+            }
+            if (lblWynikLiczba.Text == "120")
+            {
+                lblWygrana.Visible = true;
+                lblWygrane.Visible = true;
+                lblIleRazy.Visible = true;
+                int wygrane = Convert.ToInt32(lblIleRazy.Text);
+                wygrane++;
+                lblIleRazy.Text = Convert.ToString(wygrane);
+            }
+        }
+
+        void startTimers()
+        {
+            lblStartZa.Text = "2";
+            pierwszaKarta = null;
+            drugaKarta = null;
+            wybranaKarta = null;
+            lblStart.Visible = true;
+            lblStartZa.Visible = true;
+            timerPoOtwarciuAplikacji.Start();
+            timerSekunda.Start();
+        }
+
+        private void btnJeszczeRaz_Click(object sender, EventArgs e)
+        {
+            przygotujPlansze();
+            startTimers();
+        }
+
+        void przygotujPlansze()
+        {
+            lblWygrana.Visible = false;
+            lblWynikLiczba.Text = "0";
+            foreach (PictureBox box in panelDlaKart.Controls)
+            {
+                box.Enabled = false;
+                box.Image = null;
+                listaPozycjiKart.Add(box.Location);
+            }
+
+            foreach (PictureBox box in panelDlaKart.Controls)
+            {
+                Point punkt = listaPozycjiKart[losowaPozycja.Next(listaPozycjiKart.Count)];
+                box.Location = punkt;
+                listaPozycjiKart.Remove(punkt);
+            }
+        }
+        #endregion
+        #region Timery
+        private void timerPoOtwarciuAplikacji_Tick(object sender, EventArgs e)
+        {
+            timerPoOtwarciuAplikacji.Stop();
+            lblStart.Visible = false;
+            lblStartZa.Visible = false;

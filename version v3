@@ -1,1 +1,88 @@
 
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            pictureBox13.Image = Properties.Resources.Karta7;
+            wybranaKarta = pictureBox13;
+            sprawdzamy();
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            pictureBox14.Image = Properties.Resources.Karta7;
+            wybranaKarta = pictureBox14;
+            sprawdzamy();
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+            pictureBox15.Image = Properties.Resources.Karta8;
+            wybranaKarta = pictureBox15;
+            sprawdzamy();
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+            pictureBox16.Image = Properties.Resources.Karta8;
+            wybranaKarta = pictureBox16;
+            sprawdzamy();
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+            pictureBox17.Image = Properties.Resources.Karta9;
+            wybranaKarta = pictureBox17;
+            sprawdzamy();
+        }
+
+        private void pictureBox18_Click(object sender, EventArgs e)
+        {
+            pictureBox18.Image = Properties.Resources.Karta9;
+            wybranaKarta = pictureBox18;
+            sprawdzamy();
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            pictureBox19.Image = Properties.Resources.Karta10;
+            wybranaKarta = pictureBox19;
+            sprawdzamy();
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            pictureBox20.Image = Properties.Resources.Karta10;
+            wybranaKarta = pictureBox20;
+            sprawdzamy();
+        }
+
+        private void pictureBox21_Click(object sender, EventArgs e)
+        {
+            pictureBox21.Image = Properties.Resources.Karta11;
+            wybranaKarta = pictureBox21;
+            sprawdzamy();
+        }
+
+        private void pictureBox22_Click(object sender, EventArgs e)
+        {
+            pictureBox22.Image = Properties.Resources.Karta11;
+            wybranaKarta = pictureBox22;
+            sprawdzamy();
+        }
+
+        private void pictureBox23_Click(object sender, EventArgs e)
+        {
+            pictureBox23.Image = Properties.Resources.Karta12;
+            wybranaKarta = pictureBox23;
+            sprawdzamy();
+        }
+
+        private void pictureBox24_Click(object sender, EventArgs e)
+        {
+            pictureBox24.Image = Properties.Resources.Karta12;
+            wybranaKarta = pictureBox24;
+            sprawdzamy();
+        }
+        #endregion
+    }
+}

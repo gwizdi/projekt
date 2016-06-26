@@ -1,1 +1,116 @@
 
+            foreach (PictureBox box in panelDlaKart.Controls)
+            {
+                box.Enabled = true;
+                box.Cursor = Cursors.Hand;
+                box.Image = Properties.Resources.Okładka;
+            }
+            timerSekunda.Stop();
+        }
+
+        private void timerSekunda_Tick(object sender, EventArgs e)
+        {
+            int timer = Convert.ToInt32(lblStartZa.Text);
+            timer--;
+            lblStartZa.Text = Convert.ToString(timer);
+        }
+
+        private void timerPółSekundy_Tick(object sender, EventArgs e)
+        {
+            timerPółSekundy.Stop();
+            startTimers();
+        }
+
+        private void timerPoWciśnięciuDrugiejKarty_Tick(object sender, EventArgs e)
+        {
+            timerPoWciśnięciuDrugiejKarty.Stop();
+            pierwszaKarta.Image = Properties.Resources.Okładka;
+            drugaKarta.Image = Properties.Resources.Okładka;
+            pierwszaKarta = null;
+            drugaKarta = null;
+        }
+        #endregion
+        #region Karty
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.Karta1;
+            wybranaKarta = pictureBox1;
+            sprawdzamy();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Image = Properties.Resources.Karta1;
+            wybranaKarta = pictureBox2;
+            sprawdzamy();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            pictureBox3.Image = Properties.Resources.Karta2;
+            wybranaKarta = pictureBox3;
+            sprawdzamy();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            pictureBox4.Image = Properties.Resources.Karta2;
+            wybranaKarta = pictureBox4;
+            sprawdzamy();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            pictureBox5.Image = Properties.Resources.Karta3;
+            wybranaKarta = pictureBox5;
+            sprawdzamy();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            pictureBox6.Image = Properties.Resources.Karta3;
+            wybranaKarta = pictureBox6;
+            sprawdzamy();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            pictureBox7.Image = Properties.Resources.Karta4;
+            wybranaKarta = pictureBox7;
+            sprawdzamy();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            pictureBox8.Image = Properties.Resources.Karta4;
+            wybranaKarta = pictureBox8;
+            sprawdzamy();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            pictureBox9.Image = Properties.Resources.Karta5;
+            wybranaKarta = pictureBox9;
+            sprawdzamy();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            pictureBox10.Image = Properties.Resources.Karta5;
+            wybranaKarta = pictureBox10;
+            sprawdzamy();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            pictureBox11.Image = Properties.Resources.Karta6;
+            wybranaKarta = pictureBox11;
+            sprawdzamy();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            pictureBox12.Image = Properties.Resources.Karta6;
+            wybranaKarta = pictureBox12;
+            sprawdzamy();
+        }
